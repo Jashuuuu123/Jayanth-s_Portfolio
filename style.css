@@ -1,4 +1,4 @@
-/* Reset */
+/* ---------------- RESET ---------------- */
 * {
   margin: 0;
   padding: 0;
@@ -7,20 +7,20 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #0d1117;
-  color: #f5f5f5;
+  background-color: black;
+  color: white;
   line-height: 1.6;
   overflow-x: hidden;
 }
 
-/* Intro Screen */
+/* ---------------- INTRO SCREEN ---------------- */
 #intro {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  background: linear-gradient(135deg, #1a1f29, #0d1117);
+  background: linear-gradient(135deg, #1a1f29, black);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,8 +30,8 @@ body {
 
 .intro-text {
   font-size: 3rem;
-  color: #d4af37;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  color: gold;
+  text-shadow: 0 2px 4px black;
   animation: zoomIn 1.5s ease;
 }
 
@@ -44,9 +44,9 @@ body {
   to { opacity: 0; visibility: hidden; }
 }
 
-/* Navigation */
+/* ---------------- NAVIGATION ---------------- */
 header {
-  background: rgba(13, 17, 23, 0.95);
+  background: black;
   padding: 20px 50px;
   position: sticky;
   top: 0;
@@ -63,7 +63,7 @@ nav {
 .logo {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #d4af37;
+  color: gold;
 }
 
 nav ul {
@@ -74,16 +74,16 @@ nav ul {
 
 nav ul li a {
   text-decoration: none;
-  color: #f5f5f5;
+  color: white;
   font-weight: 500;
   transition: color 0.3s;
 }
 
 nav ul li a:hover {
-  color: #d4af37;
+  color: gold;
 }
 
-/* Profile Section */
+/* ---------------- PROFILE ---------------- */
 .profile {
   padding: 50px 20px;
   text-align: center;
@@ -93,7 +93,7 @@ nav ul li a:hover {
   width: 160px;
   height: 160px;
   border-radius: 50%;
-  border: 3px solid #d4af37;
+  border: 3px solid gold;
   object-fit: cover;
 }
 
@@ -105,66 +105,63 @@ nav ul li a:hover {
 
 .profile p {
   font-size: 16px;
-  color: #ccc;
+  color: lightgray;
 }
 
-/* Buttons */
+/* ---------------- BUTTONS ---------------- */
 .btn {
   display: inline-block;
   padding: 12px 25px;
-  border: 2px solid #d4af37;
-  color: #d4af37;
+  border: 2px solid gold;
+  color: gold;
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
   border-radius: 25px;
   transition: all 0.3s ease;
+  margin-top: 20px; /* spacing above buttons */
 }
 
 .btn:hover {
-  background: #d4af37;
-  color: #0d1117;
+  background: gold;
+  color: black;
   transform: translateY(-2px);
 }
 
-/* Sections */
+/* ---------------- SECTIONS ---------------- */
 .about, .projects, .education, .contact, .social {
   padding: 80px 50px;
   text-align: center;
 }
 
-.about {
-  background: #161b22;
+.about { background: #161b22; }
+.projects { background: black; }
+.education { background: #161b22; }
+.contact { background: black; }
+.social { background: #161b22; }
+
+/* About Me Text Alignment */
+.about p {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;     /* professional look */
+  line-height: 1.8;
+  font-size: 1rem;
+  color: #e0e0e0;       /* softer contrast */
 }
 
-.projects {
-  background: #0d1117;
-}
-
-.education {
-  background: #161b22;
-}
-
-.contact {
-  background: #0d1117;
-}
-
-.social {
-  background: #161b22;
-}
-
-/* Headings */
+/* ---------------- HEADINGS ---------------- */
 .about h2,
 .projects h2,
 .education h2,
 .contact h2,
 .social h2 {
-  color: #d4af37;
+  color: gold;
   font-size: 2.5rem;
   margin-bottom: 20px;
 }
 
-/* Project & Education Grids */
+/* ---------------- PROJECT & EDUCATION GRIDS ---------------- */
 .project-list,
 .education-list {
   display: grid;
@@ -185,38 +182,43 @@ nav ul li a:hover {
 .project-card:hover,
 .education-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 12px black;
 }
 
 .project-card h3,
 .education-card h3 {
-  color: #f5f5f5;
+  color: white;
   margin-bottom: 10px;
 }
 
 .project-card p,
 .education-card p {
-  color: #ccc;
+  color: lightgray;
   font-size: 0.9rem;
 }
 
-/* Contact */
+/* Project Buttons Spacing */
+.project-card .btn {
+  margin-top: 15px;
+}
+
+/* ---------------- CONTACT ---------------- */
 .contact-info p {
   font-size: 1.1rem;
   margin: 10px 0;
 }
 
 .contact-info a {
-  color: #d4af37;
+  color: gold;
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .contact-info a:hover {
-  color: #f5f5f5;
+  color: white;
 }
 
-/* Social Icons */
+/* ---------------- SOCIAL ---------------- */
 .social-icons {
   display: flex;
   justify-content: center;
@@ -232,25 +234,25 @@ nav ul li a:hover {
 
 .linkedin-logo:hover, .github-logo:hover {
   transform: scale(1.2);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 12px black;
 }
 
-/* Footer */
+/* ---------------- FOOTER ---------------- */
 footer {
   text-align: center;
-  background: #222;
+  background: black;
   color: white;
   padding: 20px;
   margin-top: 40px;
 }
 
-/* Scroll to Top Button */
+/* ---------------- SCROLL TO TOP ---------------- */
 .scroll-top {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: #d4af37;
-  color: #0d1117;
+  background: gold;
+  color: black;
   border: none;
   width: 50px;
   height: 50px;
@@ -269,7 +271,7 @@ footer {
   transform: scale(1.1);
 }
 
-/* 📱 Responsive Design */
+/* ---------------- RESPONSIVE DESIGN ---------------- */
 
 /* Tablets */
 @media (max-width: 768px) {
@@ -345,6 +347,7 @@ footer {
 
   .about p {
     font-size: 0.95rem;
+    text-align: justify; /* better readability on small screens */
   }
 
   .btn {
