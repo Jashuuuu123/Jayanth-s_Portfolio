@@ -301,21 +301,36 @@ footer {
   }
 }
 
+
 /* Mobiles */
 @media (max-width: 480px) {
   nav {
-    flex-direction: column;
-    gap: 15px;
+    flex-direction: column;   
+    gap: 10px;
   }
 
   nav ul {
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
+    flex-direction: row;    
+    flex-wrap: wrap;         
+    justify-content: space-evenly;
+    gap: 5px;
+    width: 100%;
+  }
+
+  nav ul li {
+    flex: 1;                  
+    text-align: center;
+  }
+
+  nav ul li a {
+    font-size: 0.9rem;
+    padding: 6px 0;
+    display: block;
   }
 
   .logo {
     font-size: 1.2rem;
+    text-align: center;
   }
 
   .intro-text {
@@ -347,7 +362,7 @@ footer {
 
   .about p {
     font-size: 0.95rem;
-    text-align: justify; /* better readability on small screens */
+    text-align: justify;
   }
 
   .btn {
@@ -365,3 +380,4 @@ footer {
     padding: 15px;
   }
 }
+
