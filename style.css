@@ -1,4 +1,4 @@
-/* ---------------- RESET ---------------- */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +13,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ---------------- INTRO SCREEN ---------------- */
+/* INTRO */
 #intro {
   position: fixed;
   top: 0;
@@ -44,14 +44,13 @@ body {
   to { opacity: 0; visibility: hidden; }
 }
 
-/* ---------------- NAVIGATION ---------------- */
+/* HEADER */
 header {
   background: black;
   padding: 20px 50px;
   position: sticky;
   top: 0;
   z-index: 1000;
-  backdrop-filter: blur(5px);
 }
 
 nav {
@@ -83,7 +82,7 @@ nav ul li a:hover {
   color: gold;
 }
 
-/* ---------------- PROFILE ---------------- */
+/* PROFILE */
 .profile {
   padding: 50px 20px;
   text-align: center;
@@ -108,7 +107,7 @@ nav ul li a:hover {
   color: lightgray;
 }
 
-/* ---------------- BUTTONS ---------------- */
+/* BUTTON */
 .btn {
   display: inline-block;
   padding: 12px 25px;
@@ -119,7 +118,7 @@ nav ul li a:hover {
   font-weight: 500;
   border-radius: 25px;
   transition: all 0.3s ease;
-  margin-top: 20px; /* spacing above buttons */
+  margin-top: 20px;
 }
 
 .btn:hover {
@@ -128,7 +127,7 @@ nav ul li a:hover {
   transform: translateY(-2px);
 }
 
-/* ---------------- SECTIONS ---------------- */
+/* SECTIONS */
 .about, .projects, .education, .contact, .social {
   padding: 80px 50px;
   text-align: center;
@@ -140,38 +139,31 @@ nav ul li a:hover {
 .contact { background: black; }
 .social { background: #161b22; }
 
-/* About Me Text Alignment */
 .about p {
   max-width: 800px;
   margin: 0 auto;
-  text-align: left;     /* professional look */
+  text-align: left;
   line-height: 1.8;
   font-size: 1rem;
-  color: #e0e0e0;       /* softer contrast */
+  color: #e0e0e0;
 }
 
-/* ---------------- HEADINGS ---------------- */
-.about h2,
-.projects h2,
-.education h2,
-.contact h2,
-.social h2 {
+/* HEADINGS */
+.about h2, .projects h2, .education h2, .contact h2, .social h2 {
   color: gold;
   font-size: 2.5rem;
   margin-bottom: 20px;
 }
 
-/* ---------------- PROJECT & EDUCATION GRIDS ---------------- */
-.project-list,
-.education-list {
+/* GRID */
+.project-list, .education-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
   margin-top: 30px;
 }
 
-.project-card,
-.education-card {
+.project-card, .education-card {
   background: #161b22;
   border-radius: 10px;
   padding: 20px;
@@ -179,30 +171,22 @@ nav ul li a:hover {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.project-card:hover,
-.education-card:hover {
+.project-card:hover, .education-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 12px black;
 }
 
-.project-card h3,
-.education-card h3 {
+.project-card h3, .education-card h3 {
   color: white;
   margin-bottom: 10px;
 }
 
-.project-card p,
-.education-card p {
+.project-card p, .education-card p {
   color: lightgray;
   font-size: 0.9rem;
 }
 
-/* Project Buttons Spacing */
-.project-card .btn {
-  margin-top: 15px;
-}
-
-/* ---------------- CONTACT ---------------- */
+/* CONTACT */
 .contact-info p {
   font-size: 1.1rem;
   margin: 10px 0;
@@ -218,7 +202,7 @@ nav ul li a:hover {
   color: white;
 }
 
-/* ---------------- SOCIAL ---------------- */
+/* SOCIAL */
 .social-icons {
   display: flex;
   justify-content: center;
@@ -237,7 +221,7 @@ nav ul li a:hover {
   box-shadow: 0 6px 12px black;
 }
 
-/* ---------------- FOOTER ---------------- */
+/* FOOTER */
 footer {
   text-align: center;
   background: black;
@@ -246,7 +230,7 @@ footer {
   margin-top: 40px;
 }
 
-/* ---------------- SCROLL TO TOP ---------------- */
+/* SCROLL TOP */
 .scroll-top {
   position: fixed;
   bottom: 20px;
@@ -271,68 +255,28 @@ footer {
   transform: scale(1.1);
 }
 
-/* ---------------- RESPONSIVE DESIGN ---------------- */
+/* RESPONSIVE */
 
 /* Tablets */
 @media (max-width: 768px) {
   nav ul {
+    flex-direction: column; /* FIX: stack vertically */
+    align-items: center;
     gap: 15px;
   }
 
-  nav ul li a {
-    font-size: 0.9rem;
+  nav {
+    text-align: center;
   }
 
   .profile img {
     width: 130px;
     height: 130px;
   }
-
-  .profile h1 {
-    font-size: 22px;
-  }
-
-  .about, .projects, .education, .contact, .social {
-    padding: 60px 20px;
-  }
-
-  .project-list, .education-list {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
 }
-
 
 /* Mobiles */
 @media (max-width: 480px) {
-  nav {
-    flex-direction: column;   
-    gap: 10px;
-  }
-
-  nav ul {
-    flex-direction: row;    
-    flex-wrap: wrap;         
-    justify-content: space-evenly;
-    gap: 5px;
-    width: 100%;
-  }
-
-  nav ul li {
-    flex: 1;                  
-    text-align: center;
-  }
-
-  nav ul li a {
-    font-size: 0.9rem;
-    padding: 6px 0;
-    display: block;
-  }
-
-  .logo {
-    font-size: 1.2rem;
-    text-align: center;
-  }
-
   .intro-text {
     font-size: 2rem;
     text-align: center;
@@ -352,11 +296,7 @@ footer {
     font-size: 14px;
   }
 
-  .about h2,
-  .projects h2,
-  .education h2,
-  .contact h2,
-  .social h2 {
+  .about h2, .projects h2, .education h2, .contact h2, .social h2 {
     font-size: 1.8rem;
   }
 
@@ -380,4 +320,3 @@ footer {
     padding: 15px;
   }
 }
-
