@@ -303,81 +303,39 @@ footer {
 /* Mobiles */
 @media (max-width: 480px) {
   nav {
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column; /* stack name and menu vertically */
+    justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
     gap: 10px;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    text-align: center; /* center the name */
   }
 
   nav ul {
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 5px;
-    width: auto;
+    flex-wrap: nowrap;   /* force items in single row */
+    overflow-x: auto;    /* allow horizontal scroll if needed */
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    padding-bottom: 5px;
+  }
+
+  nav ul::-webkit-scrollbar {
+    display: none; /* hide scrollbar */
   }
 
   nav ul li {
-    flex: none;
+    flex: 0 0 auto; /* prevent shrinking */
     text-align: center;
   }
 
   nav ul li a {
     font-size: 0.9rem;
-    padding: 6px 0;
-    display: block;
-  }
-
-  .logo {
-    font-size: 1.2rem;
-    text-align: center;
-  }
-
-  .intro-text {
-    font-size: 2rem;
-    text-align: center;
-    padding: 0 10px;
-  }
-
-  .profile img {
-    width: 100px;
-    height: 100px;
-  }
-
-  .profile h1 {
-    font-size: 20px;
-  }
-
-  .profile p {
-    font-size: 14px;
-  }
-
-  .about h2,
-  .projects h2,
-  .education h2,
-  .contact h2,
-  .social h2 {
-    font-size: 1.8rem;
-  }
-
-  .about p {
-    font-size: 0.95rem;
-    text-align: justify;
-  }
-
-  .btn {
-    padding: 10px 20px;
-    font-size: 0.9rem;
-  }
-
-  .linkedin-logo, .github-logo {
-    width: 45px;
-    height: 45px;
-  }
-
-  footer {
-    font-size: 0.85rem;
-    padding: 15px;
+    padding: 6px 10px;
+    display: inline-block;
   }
 }
