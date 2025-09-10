@@ -24,6 +24,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;   /* ✅ Always center */
   z-index: 9999;
   animation: fadeOut 1s ease 3s forwards;
 }
@@ -81,6 +82,22 @@ nav ul li a {
 
 nav ul li a:hover {
   color: gold;
+}
+
+/* ✅ Mobile Menu Button (hidden on desktop) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
 }
 
 /* ---------------- PROFILE ---------------- */
@@ -303,39 +320,36 @@ footer {
 /* Mobiles */
 @media (max-width: 480px) {
   nav {
-    flex-direction: column; /* stack name and menu vertically */
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .logo {
-    font-size: 1.5rem;
-    text-align: center; /* center the name */
-  }
-
-  nav ul {
     flex-direction: row;
-    flex-wrap: nowrap;   /* force items in single row */
-    overflow-x: auto;    /* allow horizontal scroll if needed */
-    justify-content: center;
-    gap: 15px;
-    width: 100%;
-    padding-bottom: 5px;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
   }
 
-  nav ul::-webkit-scrollbar {
-    display: none; /* hide scrollbar */
+  /* ✅ Hide menu by default */
+  nav ul {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: black;
+    flex-direction: column;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+  }
+
+  /* ✅ Show menu when active */
+  nav ul.show {
+    max-height: 500px;
   }
 
   nav ul li {
-    flex: 0 0 auto; /* prevent shrinking */
     text-align: center;
+    padding: 15px 0;
   }
 
-  nav ul li a {
-    font-size: 0.9rem;
-    padding: 6px 10px;
-    display: inline-block;
+  .menu-toggle {
+    display: flex;
   }
 }
