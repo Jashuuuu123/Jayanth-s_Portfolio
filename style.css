@@ -24,7 +24,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;   /* ✅ Always center */
+  text-align: center;
   z-index: 9999;
   animation: fadeOut 1s ease 3s forwards;
 }
@@ -84,7 +84,7 @@ nav ul li a:hover {
   color: gold;
 }
 
-/* ✅ Mobile Menu Button (hidden on desktop) */
+/* ✅ Mobile Menu Button */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -146,18 +146,19 @@ nav ul li a:hover {
 }
 
 /* ---------------- SECTIONS ---------------- */
-.about, .projects, .education, .contact, .social {
+.about, .experience, .projects, .education, .contact, .social {
   padding: 80px 50px;
   text-align: center;
 }
 
 .about { background: darkslategray; }
-.projects { background: black; }
-.education { background: darkslategray; }
-.contact { background: black; }
-.social { background: darkslategray; }
+.experience { background: black; }
+.projects { background: darkslategray; }
+.education { background: black; }
+.contact { background: darkslategray; }
+.social { background: black; }
 
-/* About Me Text Alignment */
+/* About Me Text */
 .about p {
   max-width: 800px;
   margin: 0 auto;
@@ -169,6 +170,7 @@ nav ul li a:hover {
 
 /* ---------------- HEADINGS ---------------- */
 .about h2,
+.experience h2,
 .projects h2,
 .education h2,
 .contact h2,
@@ -178,9 +180,10 @@ nav ul li a:hover {
   margin-bottom: 20px;
 }
 
-/* ---------------- PROJECT & EDUCATION GRIDS ---------------- */
+/* ---------------- CARD GRIDS ---------------- */
 .project-list,
-.education-list {
+.education-list,
+.experience-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
@@ -188,8 +191,9 @@ nav ul li a:hover {
 }
 
 .project-card,
-.education-card {
-  background: darkslategray;
+.education-card,
+.experience-card {
+  background: dimgray;
   border-radius: 10px;
   padding: 20px;
   text-align: center;
@@ -197,24 +201,28 @@ nav ul li a:hover {
 }
 
 .project-card:hover,
-.education-card:hover {
+.education-card:hover,
+.experience-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 12px black;
 }
 
 .project-card h3,
-.education-card h3 {
+.education-card h3,
+.experience-card h3 {
   color: white;
   margin-bottom: 10px;
 }
 
 .project-card p,
-.education-card p {
+.education-card p,
+.experience-card p {
   color: lightgray;
   font-size: 0.9rem;
 }
 
-.project-card .btn {
+.project-card .btn,
+.experience-card .btn {
   margin-top: 15px;
 }
 
@@ -287,9 +295,7 @@ footer {
   transform: scale(1.1);
 }
 
-/* ---------------- RESPONSIVE DESIGN ---------------- */
-
-/* Tablets */
+/* ---------------- RESPONSIVE ---------------- */
 @media (max-width: 768px) {
   nav ul {
     gap: 15px;
@@ -308,11 +314,11 @@ footer {
     font-size: 22px;
   }
 
-  .about, .projects, .education, .contact, .social {
+  .about, .experience, .projects, .education, .contact, .social {
     padding: 60px 20px;
   }
 
-  .project-list, .education-list {
+  .project-list, .education-list, .experience-list {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 }
@@ -326,7 +332,6 @@ footer {
     position: relative;
   }
 
-  /* ✅ Hide menu by default */
   nav ul {
     position: absolute;
     top: 60px;
@@ -339,7 +344,6 @@ footer {
     transition: max-height 0.4s ease-in-out;
   }
 
-  /* ✅ Show menu when active */
   nav ul.show {
     max-height: 500px;
   }
@@ -351,5 +355,17 @@ footer {
 
   .menu-toggle {
     display: flex;
+  }
+
+  .intro-text {
+    font-size: 2rem;
+  }
+
+  .profile h1 {
+    font-size: 20px;
+  }
+
+  .profile p {
+    font-size: 14px;
   }
 }
