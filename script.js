@@ -11,12 +11,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener("click", e => {
     e.preventDefault();
     document.querySelector(anchor.getAttribute("href")).scrollIntoView({ behavior: "smooth" });
-
-    // ✅ Close mobile menu after clicking a link
-    const navMenu = document.querySelector("nav ul");
-    if (navMenu.classList.contains("show")) {
-      navMenu.classList.remove("show");
-    }
   });
 });
 
@@ -39,17 +33,8 @@ const observer = new IntersectionObserver(entries => {
     }
   });
 }, { threshold: 0.15 });
+
 sections.forEach(section => {
   section.classList.add("hidden");
   observer.observe(section);
 });
-
-// ✅ Mobile Menu Toggle
-const menuToggle = document.querySelector(".menu-toggle");
-const navMenu = document.querySelector("nav ul");
-
-if (menuToggle) {
-  menuToggle.addEventListener("click", () => {
-    navMenu.classList.toggle("show");
-  });
-}
